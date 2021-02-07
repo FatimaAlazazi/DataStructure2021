@@ -78,7 +78,7 @@ public class Ops {
         while (true) {
             System.out.println("enter element");
             o.addSortedElement(s.nextInt());
-            
+
         }
     }
 
