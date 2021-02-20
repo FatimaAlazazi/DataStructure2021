@@ -1,12 +1,13 @@
 package lab3;
 
+import java.util.Arrays;
+
 /**
  * Created by fatima on 07/02/2021.
  */
 public class CaesarCipher {
     char encoder[]= new char[26];
     char decoder[]=new char[26];
-
     public CaesarCipher(int rotation) {
         for (int i = 0; i <encoder.length ; i++) {
             encoder[i]=(char)('A'+(i+rotation)%26);
@@ -14,7 +15,10 @@ public class CaesarCipher {
 
         }
 
+
     }
+
+
     public String encrypt(String message)
     {return transform(message,encoder);}
     public String decrypt(String message)
@@ -38,5 +42,9 @@ public class CaesarCipher {
         String x=c.encrypt(mess);
         System.out.println(x);
         System.out.println(c.decrypt(x));
+        System.out.println((int )'A');
+        System.out.println(Arrays.toString(c.encoder));
+        System.out.println(Arrays.toString(c.decoder));
+
     }
 }
