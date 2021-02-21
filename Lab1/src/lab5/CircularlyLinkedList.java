@@ -3,12 +3,11 @@ package lab5;
 /**
  * Created by fatima on 20/02/2021.
  */
-public class SinglyLinkedList<E> {
-    Node<E> head = null;
-    Node<E> tail = null;
+public class CircularlyLinkedList<E> {
+    private Node<E> tail = null;
     private int size = 0;
 
-    public SinglyLinkedList() {
+    public CircularlyLinkedList() {
     }
 
     public boolean isEmpty() {
@@ -21,7 +20,7 @@ public class SinglyLinkedList<E> {
 
     public E first() {
         if (isEmpty()) return null;
-        return head.getElement();
+        return tail.getNext().getElement();
     }
 
     public E last() {
@@ -30,45 +29,40 @@ public class SinglyLinkedList<E> {
     }
 
     public void addFirst(E element) {
-        head = new Node<E>(element, head);
-        if (size == 0)
-            tail = head;
-        size++;
-    }
-
-    public void addLast(E element) {
-        Node<E> newest = new Node<E>(element, null);
-        if (isEmpty())
-            head = newest;
-        else
+        if (size == 0) {
+            tail = new Node<E>(element, null);
+            tail.setNext(tail);
+        } else {
+            Node<E> newest = new Node<E>(element, tail.getNext());
             tail.setNext(newest);
-        tail = newest;
+        }
         size++;
     }
-
-    public E removeFirst() {
-        if (isEmpty()) return null;
-        E deleted = head.getElement();
-        head = head.getNext();
+    public void addLast(E element)
+    {
+       addFirst(element);
+        tail=tail.getNext();
+    }
+    public E removeFirst()
+    {
+        if (isEmpty())return null;
+        Node<E> deleted= tail.getNext();
+        if(deleted==tail)
+            tail=null;
+        else
+        tail.setNext(deleted.getNext());
         size--;
-        if (size == 0)
-            tail = null;
-        return deleted;
+        return deleted.getElement();
     }
+public void rotate()
+{
+    if(tail!=null)
+    tail=tail.getNext();
 
-    public String print() {
-        String all = "";
-        Node<E> i = head;
-        while (i != null) {
-            all = all + i.getElement().toString() + "\n";
-            i = i.next;
-        }
-        return all;
-    }
-
+}
     private static class Node<E> {
-        private E element;
-        private Node<E> next;
+        E element;
+        Node<E> next;
 
         public Node(E element, Node<E> next) {
             this.element = element;
