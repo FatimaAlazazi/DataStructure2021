@@ -1,4 +1,4 @@
-package lab5;
+package lab6;
 
 /**
  * Created by fatima on 20/02/2021.
