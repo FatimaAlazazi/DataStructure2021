@@ -5,7 +5,7 @@ package lab5;
  */
 public class TestSingly {
     public static void main(String[] args) {
-        SinglyLinkedList<Integer>list= new SinglyLinkedList<>();
+        SinglyLinkedList<Integer> list= new SinglyLinkedList<>();
         list.addFirst(11);
         list.addLast(12);
 //        System.out.println(list.first());
