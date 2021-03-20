@@ -1,11 +1,11 @@
-package Lab8;
+package lab8;
 
 /**
  * Created by fatima on 12/03/2021.
  */
-public class TestLinkedQueue {
+public class TestArrayQueue {
     public static void main(String[] args) {
-        LinkedQueue<Integer>queue= new LinkedQueue<>();
+        ArrayQueue<Integer>queue= new ArrayQueue<>(3);
         queue.enqueue(1);
         queue.enqueue(2);
         queue.enqueue(3);

@@ -1,4 +1,4 @@
-package Lab7;
+package lab7;
 
 /**
  * Created by fatima on 06/03/2021.

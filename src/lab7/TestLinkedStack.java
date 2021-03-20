@@ -1,14 +1,15 @@
-package Lab7;
+package lab7;
+
 import java.util.Arrays;
-import java.util.Stack;
+
 /**
  * Created by fatima on 06/03/2021.
  */
-public class UseJavaStack {
+public class TestLinkedStack {
     public static void main(String[] args) {
-        Stack<Integer>stack= new Stack<>();
-        System.out.println("reverse array elements using java.util.stack\n");
-        int[]arr={1,2,3,4,5,6,7,8,9,10,11};
+        System.out.println("reverse array elements using stack\n");
+        LinkedStack<Integer>stack= new LinkedStack<>();
+        int[]arr={1,2,3,4,5};
         System.out.println("array elements before reverse");
 
         System.out.println(Arrays.toString(arr)+"\n\n");

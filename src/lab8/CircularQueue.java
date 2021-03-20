@@ -1,4 +1,4 @@
-package Lab8;
+package lab8;
 
 /**
  * Created by fatima on 09/03/2020.

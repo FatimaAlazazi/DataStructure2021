@@ -1,4 +1,4 @@
-package Lab7;
+package lab7;
 
 import lab5.SinglyLinkedList;
 
